@@ -69,8 +69,9 @@ function _draw()
   end
   
   if screen == 10 then
-    circfill(cx,0,15,10)
-		  map(0, 0, 0, 0, 128, 16)		  
+    rectfill(0,0,1050,128,1) //sky
+    circfill(cx,0,15,10) //sun
+		  map(0, 0, 0, 0, 128, 16)  
 		  p.x += cvx
 		  ani(p, 2, 2, 3, 4)
   
