@@ -33,7 +33,27 @@ function start()
   bg.sobjects[1].x = 0
   bg.sobjects[1].y = 0
   bg.sobjects[1].sprite = 43
-  
+  bg.sobjects[2] = {}
+  bg.sobjects[2].x = 150
+  bg.sobjects[2].y = 25
+  bg.sobjects[2].sprite = 43
+  bg.sobjects[3] = {}
+  bg.sobjects[3].x = 300
+  bg.sobjects[3].y = 15
+  bg.sobjects[3].sprite = 43
+  bg.sobjects[4] = {}
+  bg.sobjects[4].x = 450
+  bg.sobjects[4].y = 30
+  bg.sobjects[4].sprite = 43
+  bg.sobjects[5] = {}
+  bg.sobjects[5].x = 600
+  bg.sobjects[5].y = 5
+  bg.sobjects[5].sprite = 43
+  bg.sobjects[6] = {}
+  bg.sobjects[6].x = 750
+  bg.sobjects[6].y = 35
+  bg.sobjects[6].sprite = 43
+    
   //camera position
   cx=0
   
@@ -106,6 +126,13 @@ end
 function drawenv() 
   rectfill(0,0,1050,128,1) //sky
   circfill(cx,0,15,10) //sun
+		
+		for s in all(bg.sobjects) do
+		  s.x += .25
+		  spr(s.sprite, s.x, s.y, 2, 2)  
+		  if s.x < 0 then s.x=1000 end
+		end
+		
 		//todo draw clouds, sprite 43
 		map(0, 0, 0, 0, 128, 16)
 end
