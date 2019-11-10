@@ -7,6 +7,12 @@ function _init()
   //10 = gameplay
   //99 = game over
 
+  start()
+end
+
+function start() 
+  cls()
+  
 		//player
   p = {}
   p.x = 16 //position x
@@ -20,6 +26,13 @@ function _init()
   p.cframe = 1 //current frame
   p.tslfc = 0 //last frame change
   p.state = "running" //running, jump1, jump2
+  
+  bg = {}
+  bg.sobjects = {} //scrolling background objects
+  bg.sobjects[1] = {}
+  bg.sobjects[1].x = 0
+  bg.sobjects[1].y = 0
+  bg.sobjects[1].sprite = 43
   
   //camera position
   cx=0
@@ -69,16 +82,24 @@ function _draw()
   end
   
   if screen == 10 then  
-		  drawenv()
-		  p.x += cvx
-		  ani(p, 2, 2, 3, 4)
-  
-    cx += cvx
-    if cx > 900 then
-      cx = 0
-    		p.x = 16
-  		end
-  		camera(cx, 0)
+		  if p.y > 130 then
+		    print("oh no, bk is dead!", p.x + 10, 32)
+		    print("press any button to restart", p.x - 6, 50)
+	     if btn() > 0 then
+	       start()
+	     end
+		  else
+			  drawenv()
+			  p.x += cvx
+			  ani(p, 2, 2, 3, 4)
+	  
+	    cx += cvx
+	    if cx > 900 then
+	      cx = 0
+	    		p.x = 16
+	  		end
+	  		camera(cx, 0)
+	  end
   end
 end
 
