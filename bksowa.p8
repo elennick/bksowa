@@ -67,6 +67,18 @@ function start(level)
     bg.sobjects[i].y = flr(rnd(70))
     bg.sobjects[i].sprite = 43 //cloud sprite
   end
+  for i=1, 15 do
+    bg.sobjects[i+15] = {}
+    bg.sobjects[i+15].x = (i*100) + flr(rnd(100))
+    bg.sobjects[i+15].y = 128 + flr(rnd(70))
+    bg.sobjects[i+15].sprite = 43 //cloud sprite
+  end
+  for i=1, 15 do
+    bg.sobjects[i+30] = {}
+    bg.sobjects[i+30].x = (i*100) + flr(rnd(100))
+    bg.sobjects[i+30].y = 256 + flr(rnd(70))
+    bg.sobjects[i+30].sprite = 43 //cloud sprite
+  end
   
   placeenemies()
   
