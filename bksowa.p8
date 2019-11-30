@@ -12,7 +12,14 @@ function _init()
   tslsc = 0 //time since last screen change
   debug = false
   finalscore = 0
-
+  firstlevel = 1
+  
+  if not debug then
+    levelthreshold = 1500
+  else
+    levelthreshold = 300
+  end
+  
   //levels
   l = {}
   l[1] = {}
@@ -51,7 +58,7 @@ function startgame()
   health = 5
   lthl = 0 //last time health lost
  
-  startlevel(3)
+  startlevel(firstlevel)
 end
 
 function startlevel(level) 
@@ -145,7 +152,7 @@ function _update()
 
   if screen == 10 then
     //level time is up
-    if tslsc > 1500 then
+    if tslsc > levelthreshold then
       if cl < 3 then
         local nextlevel = cl+1
         startlevel(nextlevel)
@@ -395,14 +402,17 @@ end
 
 function drawwinscreen()
   camera(0,0)
-  spr(68, 40, 24, 2, 2)
+  spr(68, 38, 24, 2, 2)
   spr(72, 56, 24, 2, 2)
-  spr(78, 72, 24, 2, 2)
+  spr(78, 74, 24, 2, 2)
   color(7)
   print("bk stayed safe! great job!", 12, 50)
   print("final score: "..finalscore, 24, 65)
   color(14)
   print("press up arrow to restart", 12, 80)
+  spr(96, 38, 94, 2, 2)
+  spr(98, 56, 94, 2, 2)
+  spr(100, 74, 94, 2, 2)
 end
 
 function drawlevelintro()
