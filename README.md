@@ -8,4 +8,4 @@ The cart thread is available here: https://www.lexaloffle.com/bbs/?tid=36082
 
 BKSOWA was written in Lua using [PICO8](https://www.lexaloffle.com/pico-8.php). All code, art and music was created by Evan and Josh.
 
-![Screenshot 1](https://github.com/elennick/bksowa/blob/master/bksowa_1.gif)   ![Screenshot 2](https://github.com/elennick/bksowa/blob/master/bksowa_2.gif)
+![GIF 1](https://github.com/elennick/bksowa/blob/master/pics/bksowa_1.gif)   ![GIF 2](https://github.com/elennick/bksowa/blob/master/pics/bksowa_2.gif)   ![GIF 3](https://github.com/elennick/bksowa/blob/master/pics/bksowa_3.gif)
